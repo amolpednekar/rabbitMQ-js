@@ -1,8 +1,9 @@
 'use strict';
 
 const amqp = require('amqplib/callback_api');
+const config = require('./config');
 
-amqp.connect('amqp://10.80.67.79', function(err, conn) {
+amqp.connect('amqp://' + config.rabbitMQServerIP, function(err, conn) {
     if (err) {
         throw err;
     }
